@@ -1,0 +1,19 @@
+package com.credmarg.vendor.service.impl;
+
+import org.slf4j.*;
+
+import com.credmarg.vendor.entity.Vendor;
+
+public class EmailServiceImpl {
+	
+	private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
+
+    public void sendEmailToVendor(Vendor vendor, String messageTemplate) {
+        String message = messageTemplate
+                .replace("{name}", vendor.getName())
+                .replace("{upi}", vendor.getUPI());
+        
+        logger.info("Sending email to {}: {}", vendor.getEmail(), message);
+        // Actual email sending logic would go here
+    }
+}

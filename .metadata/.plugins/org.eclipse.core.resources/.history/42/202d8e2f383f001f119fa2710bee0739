@@ -1,0 +1,5 @@
+package com.credmarg.vendor.config;
+
+public class WebConfig {
+
+}

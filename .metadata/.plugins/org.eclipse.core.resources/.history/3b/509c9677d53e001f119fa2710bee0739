@@ -1,0 +1,10 @@
+package com.credmarg.vendor.service;
+
+import com.credmarg.vendor.entity.Vendor;
+
+public abstract class EmailService {
+
+	
+	public abstract void sendEmailToVendor(Vendor vendor, String messageTemplate);
+
+}

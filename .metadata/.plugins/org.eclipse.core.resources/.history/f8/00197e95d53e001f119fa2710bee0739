@@ -1,0 +1,5 @@
+package com.credmarg.vendor.service.impl;
+
+public class EmailServiceImpl {
+
+}

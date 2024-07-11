@@ -1,0 +1,28 @@
+package com.credmarg.vendor.service.impl;
+
+import java.util.List;
+
+import org.slf4j.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.credmarg.vendor.entity.Vendor;
+import com.credmarg.vendor.service.EmailService;
+import com.credmarg.vendor.service.VendorService;
+
+@Service
+public class EmailServiceImpl implements EmailService {
+
+	@Autowired
+	private VendorService vendorService;
+
+	private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
+
+	public void sendEmailToVendor(List<String> emailIds) {
+
+		List<Vendor> vendors = vendorService.getAllVendors();
+		vendors.stream().forEach(
+				e -> logger.info("Sending payments to vendor "+e.getName()+" at "+e.getUPI()));
+
+	}
+}

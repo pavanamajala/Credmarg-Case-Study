@@ -1,0 +1,9 @@
+package com.credmarg.vendor.service;
+
+import java.util.List;
+
+public interface EmailService {
+
+	public void sendEmailToVendor(List<String> emailIds);
+
+}

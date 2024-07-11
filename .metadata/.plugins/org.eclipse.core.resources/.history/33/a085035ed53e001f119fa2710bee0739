@@ -1,0 +1,14 @@
+package com.credmarg.vendor.service;
+
+import org.slf4j.*;
+
+import com.credmarg.vendor.entity.Vendor;
+
+public abstract class EmailService {
+	
+	 private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
+
+	
+	public abstract void sendEmailToVendor(Vendor vendor, String messageTemplate);
+
+}

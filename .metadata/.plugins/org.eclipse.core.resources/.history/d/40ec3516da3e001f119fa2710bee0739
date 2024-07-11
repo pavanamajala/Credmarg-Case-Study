@@ -1,0 +1,14 @@
+package com.credmarg.vendor.service.impl;
+
+import java.util.List;
+
+import org.slf4j.*;
+
+public class EmailServiceImpl {
+	
+	private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
+
+    public void sendEmailToVendor(List<String> emailIds, String messageTemplate) {
+    	
+    }
+}

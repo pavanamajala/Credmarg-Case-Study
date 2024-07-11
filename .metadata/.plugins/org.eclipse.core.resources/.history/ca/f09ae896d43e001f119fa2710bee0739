@@ -1,0 +1,5 @@
+package com.credmarg.vendor.service;
+
+public interface VendorService {
+
+}

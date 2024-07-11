@@ -1,0 +1,16 @@
+package com.credmarg.vendor.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.credmarg.vendor.entity.Vendor;
+
+@Service
+public interface VendorService {
+	
+	public void saveVendor(Vendor vendor);
+    
+    public List<Vendor> getAllVendors();
+
+}
