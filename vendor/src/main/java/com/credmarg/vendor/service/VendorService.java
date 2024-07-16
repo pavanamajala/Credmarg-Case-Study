@@ -10,4 +10,6 @@ public interface VendorService {
     
     public List<Vendor> getAllVendors();
 
+	public  List<Vendor> getByNames(String id);
+
 }

@@ -91,6 +91,17 @@ const VendorComponent = () => {
         }
     }
 
+    const fetchDataByName = (value) => {
+        if(!value) return;
+        axios.get(`http://localhost:8080/vendor/getByname/${value}`,)
+            .then(response => {
+                setVendorsList(response.data);
+            })
+            .catch(error => {
+                console.error('Error adding vendor:', error);
+            });
+    }
+
     useEffect(() => {
         getAllVendorsData();
     }, []);
@@ -112,6 +123,7 @@ const VendorComponent = () => {
 
             <div className="list-section">
                 <h2>Vendors List</h2>
+                <InputBoxWithLabel lable={"Enter value to get Employees"} onChange={(e) => { fetchDataByName(e.target.value) }} />
                 <table>
                     <thead>
                         <tr>

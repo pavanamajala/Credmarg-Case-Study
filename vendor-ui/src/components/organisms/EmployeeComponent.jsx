@@ -68,6 +68,17 @@ const EmployeeComponent = () => {
             });
     }
 
+    const fetchDataByName = (value) => {
+        if(!value) return;
+        axios.get(`http://localhost:8080/employee/getByName/${value}`,)
+            .then(response => {
+                setEmloyeeList(response.data);
+            })
+            .catch(error => {
+                console.error('Error adding employee:', error);
+            });
+    }
+
     useEffect(() => {
         getAllEmployeeData();
     }, []);
@@ -88,7 +99,8 @@ const EmployeeComponent = () => {
             </div>
 
             <div className="list-section">
-                <h2>Vendors List</h2>
+                <h2>Employees List</h2>
+                <InputBoxWithLabel lable={"Enter value to get Employees"} onChange={(e) => {fetchDataByName(e.target.value)}}/>
                 <table>
                     <thead>
                         <tr>

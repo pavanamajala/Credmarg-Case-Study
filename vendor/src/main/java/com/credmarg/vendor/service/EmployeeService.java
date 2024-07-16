@@ -10,4 +10,6 @@ public interface EmployeeService {
 	
 	public List<Employee> getAllEmployees();
 
+	public List<Employee> getEmployeesByName(String id);
+
 }
