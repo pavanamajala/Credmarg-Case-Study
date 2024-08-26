@@ -16,6 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public void saveEmployee(Employee employee) {
+		if(employee.getEmail().length() < 3) throw new IllegalArgumentException("Email length must be at least 3 characters.");
 		employeesList.add(employee);
 	}
 

@@ -53,7 +53,7 @@ const EmployeeComponent = () => {
                     getAllEmployeeData();
                 })
                 .catch(error => {
-                    console.error('Error adding employee:', error);
+                    alert(error?.response?.data?.message);
                 });
         }
     };
@@ -64,7 +64,7 @@ const EmployeeComponent = () => {
                 setEmloyeeList(response.data);
             })
             .catch(error => {
-                console.error('Error adding employee:', error);
+                alert(error?.response?.data?.message);
             });
     }
 
@@ -75,7 +75,7 @@ const EmployeeComponent = () => {
                 setEmloyeeList(response.data);
             })
             .catch(error => {
-                console.error('Error adding employee:', error);
+                alert(error?.response?.data?.message);
             });
     }
 

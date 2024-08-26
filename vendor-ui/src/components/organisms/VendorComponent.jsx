@@ -48,7 +48,7 @@ const VendorComponent = () => {
                     getAllVendorsData();
                 })
                 .catch(error => {
-                    console.error('Error adding vendor:', error);
+                    alert(error?.response?.data?.message);
                 });
         }
     };
@@ -59,7 +59,7 @@ const VendorComponent = () => {
                 setVendorsList(response.data);
             })
             .catch(error => {
-                console.error('Error adding vendor:', error);
+                alert(error?.response?.data?.message);
             });
     }
 
@@ -85,7 +85,7 @@ const VendorComponent = () => {
                     alert(response.data);
                 })
                 .catch(error => {
-                    console.error('Error sending email:', error);
+                    alert(error?.response?.data?.message);
                 });
             setSelectedRows([]);
         }
@@ -98,7 +98,7 @@ const VendorComponent = () => {
                 setVendorsList(response.data);
             })
             .catch(error => {
-                console.error('Error adding vendor:', error);
+                alert(error?.response?.data?.message);
             });
     }
 
