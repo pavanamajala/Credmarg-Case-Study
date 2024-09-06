@@ -9,6 +9,13 @@ import org.springframework.web.context.request.WebRequest;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+	
+	@ExceptionHandler(InvalidLengthException.class)
+	public ResponseEntity<ApiErrorResponse> handleInvalidLengthException(Exception e, WebRequest request) {
+		System.out.println(e +"  "+ request);
+		ApiErrorResponse errorResponse = new ApiErrorResponse(HttpStatus.BAD_REQUEST.value(), e.getMessage());
+		return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+	}
 
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	public ResponseEntity<ApiErrorResponse> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex,

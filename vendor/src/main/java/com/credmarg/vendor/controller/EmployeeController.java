@@ -22,7 +22,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
     
     @PostMapping("/create")
-    public ResponseEntity<String> createEmployee(@RequestBody Employee employee) {
+    public ResponseEntity<String> createEmployee(@RequestBody Employee employee) throws Exception {
         employeeService.saveEmployee(employee);
         return ResponseEntity.ok("Employee created successfully");
     }
